@@ -12,6 +12,7 @@ public class Main extends Application {
 
     public static String lastPolitician;
 
+    // Ausgabe der fxml Datei
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = null;
@@ -21,7 +22,7 @@ public class Main extends Application {
             e.printStackTrace();
         }
         Scene scene = new Scene(root);
-        primaryStage.setTitle("FXML Welcome");
+        primaryStage.setTitle("Wer bin Ich?");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
