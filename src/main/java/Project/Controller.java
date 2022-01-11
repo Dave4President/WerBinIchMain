@@ -56,7 +56,7 @@ public  class Controller implements Initializable {
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Nein GEDRÜCKT");
         Button btn = new Button();
-        btn.setText("Ja GEDRÜCKT");
+        btn.setText("Nein GEDRÜCKT");
         btn.setOnAction( (event) -> Platform.exit() );
         Pane root = new StackPane();
         root.getChildren().add(btn);
