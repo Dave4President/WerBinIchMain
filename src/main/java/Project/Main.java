@@ -1,32 +1,10 @@
 package Project;
 import java.io.IOException;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 import java.util.Scanner;
 
-public class Main extends Application {
-
+public class Main  {
 
     public static String lastPolitician;
-
-    // Ausgabe der fxml Datei
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(getClass().getResource("/sample.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Scene scene = new Scene(root);
-        primaryStage.setTitle("Wer bin Ich?");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
 
     public static boolean endOfGame() {
 
@@ -51,8 +29,6 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-
-        launch(args);
 
         boolean isGameOn = true;
         boolean answer;
