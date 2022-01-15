@@ -1,3 +1,5 @@
+package Project;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -169,7 +171,7 @@ public class Politician {
         // Siehe auch Kommentar von fillList()
         // Die Methode arbeitet die Liste der Kategorien ab
         // und gibt eine nach der anderen aus.
-        // Wird ebenfalls in Politician.getProbability verwendet.
+        // Wird ebenfalls in Project.Politician.getProbability verwendet.
 
         String tempString;
         if (categoryList.size() == 0) {

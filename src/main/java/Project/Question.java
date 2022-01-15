@@ -1,3 +1,5 @@
+package Project;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -25,7 +27,7 @@ public class Question {
     public static void fillList() {
 
         // Eine Methode, die den Fragen zugehörigen Kategorien in eine List speichert.
-        // Die Liste wird in Politician.getProbability abgearbeitet und wird dazu verwendet,
+        // Die Liste wird in Project.Politician.getProbability abgearbeitet und wird dazu verwendet,
         // eine geeignete Frage den übrigen Personen entsprechend zu berechnen. (Möglichst nahe an 50:50)
 
 
@@ -47,7 +49,7 @@ public class Question {
         // Siehe auch Kommentar von fillList()
         // Die Methode arbeitet die Liste der Antworten ab
         // und gibt eine nach der anderen aus.
-        // Wird ebenfalls in Politician.getProbability verwendet.
+        // Wird ebenfalls in Project.Politician.getProbability verwendet.
 
         String tempString;
         if (answerList.size() == 0) {
@@ -180,7 +182,7 @@ public class Question {
 
         // Arbeitet die in createQuestions() erstellte Fragenliste ab.
         // Soll in weiterer Folge den Index der Frage übergeben bekommen,
-        // der in Politician.getProbability() errechnet wird.
+        // der in Project.Politician.getProbability() errechnet wird.
 
         Question questionPrint = finalQuestionList.get(position);
         currentQuestionObject = questionPrint;
