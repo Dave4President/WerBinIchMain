@@ -187,6 +187,12 @@ public class Politician {
 
     public static String mergeProbability() {
 
+        // Sammelt aus den getProbability Methoden der einzelnen Kategorien alle Werte.
+        // Die Frage, die am ehesten zu einem 50:50 Ausschluss führt wird ausgewählt.
+        // In dieser Methode wird die Antwort (Attribut im JSON File) der gewählten Frage ausgegeben.
+        // Über Question.stringToIndex wird der Index der Fragenliste gefunden und in Question.getNewQuestion
+        // der zugehörige Fragenstring ausgegeben
+
         ArrayList<Integer> someList = new ArrayList<Integer>();
         ArrayList<String> anotherList = new ArrayList<String>();
 
@@ -210,18 +216,14 @@ public class Politician {
             if (someList.get(i) > tempInt && someList.get(i) != 0) {
                 tempInt = someList.get(i);
                 tempString = anotherList.get(i);
-
-
             }
         }
-
         return tempString;
     }
 
     public static String getProbabilityAlter() {
 
         // Teil eines Versuchs einer "intelligenten" Fragenfindung
-        // Wird noch nicht verwendet
 
         int limit = finalPoliticianList.size();;
         ArrayList<Politician> tempList = finalPoliticianList;
@@ -291,7 +293,6 @@ public class Politician {
     public static String getProbabilityBrille() {
 
         // Teil eines Versuchs einer "intelligenten" Fragenfindung
-        // Wird noch nicht verwendet
 
         int limit = finalPoliticianList.size();;
         ArrayList<Politician> tempList = finalPoliticianList;
@@ -300,7 +301,6 @@ public class Politician {
         Question tempQuestion = new Question();
 
         String brille = "brille";
-
 
         int brilleCount = 0;
         int neinCount = 0;
@@ -345,7 +345,6 @@ public class Politician {
     public static String getProbabilityAmt() {
 
         // Teil eines Versuchs einer "intelligenten" Fragenfindung
-        // Wird noch nicht verwendet
 
         int limit = finalPoliticianList.size();;
         ArrayList<Politician> tempList = finalPoliticianList;
@@ -453,7 +452,6 @@ public class Politician {
     public static String getProbabilityPartei() {
 
         // Teil eines Versuchs einer "intelligenten" Fragenfindung
-        // Wird noch nicht verwendet
 
         int limit = finalPoliticianList.size();;
         ArrayList<Politician> tempList = finalPoliticianList;
@@ -552,7 +550,6 @@ public class Politician {
     public static String getProbabilityHaare() {
 
         // Teil eines Versuchs einer "intelligenten" Fragenfindung
-        // Wird noch nicht verwendet
 
         int limit = finalPoliticianList.size();;
         ArrayList<Politician> tempList = finalPoliticianList;
@@ -561,7 +558,6 @@ public class Politician {
         Question tempQuestion = new Question();
 
         String haare = "haare";
-        // Glatze, grau, braun, schwarz, blond
 
         int glatzeCount = 0;
         int grauCount = 0;
@@ -621,7 +617,6 @@ public class Politician {
     public static String getProbabilityGeschlecht() {
 
         // Teil eines Versuchs einer "intelligenten" Fragenfindung
-        // Wird noch nicht verwendet
 
         int limit = finalPoliticianList.size();;
         ArrayList<Politician> tempList = finalPoliticianList;
@@ -675,7 +670,6 @@ public class Politician {
     public static String getProbabilityAktiv() {
 
         // Teil eines Versuchs einer "intelligenten" Fragenfindung
-        // Wird noch nicht verwendet
 
         int limit = finalPoliticianList.size();;
         ArrayList<Politician> tempList = finalPoliticianList;
@@ -724,58 +718,6 @@ public class Politician {
             }
         }
         return tempString;
-    }
-
-    public static int getNewProbability() {
-
-        // tbd
-        // Sollte am Ende die Frage berechnen, die am ehesten zu einem 50:50 Ergebnis führt
-
-        double x;
-        double y;
-
-        ArrayList<Question> testList = Question.getQuestionsArr();
-        Question tempQuestion = Question.currentQuestionObject;
-
-        int toReturn = 0;
-        double tempInt = 0;
-        double bestProbability = 0;
-
-        x = finalPoliticianList.size();
-
-        for (int i = 0; i < finalPoliticianList.size(); i++) {
-
-            String tempCategory = categoryOneAfterTheOther();
-            String tempAnswer = Question.answerOneAfterTheOther();
-
-            List<Politician> tempList = Politician.getPoliticiansArr()
-                    .stream()
-                    .filter(Politician -> Politician.getCategory(tempCategory).equals(tempAnswer))
-                    .collect(Collectors.toList());
-            y = tempList.size();
-
-            if (tempList.size() == 0 || tempList.size() == tempList.size()) {
-                continue;
-            }
-            else {
-                tempQuestion = Question.currentQuestionObject;
-            }
-
-            if (y < x - y) {
-                y = x - y;
-            }
-
-            tempInt = x / y;
-
-            if (tempInt > bestProbability) {
-                bestProbability = tempInt;
-
-                toReturn = testList.indexOf(tempQuestion);
-            }
-
-        }
-
-        return toReturn;
     }
 
     public static void createPoliticians() {

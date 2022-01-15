@@ -79,9 +79,7 @@ public class Question {
         // Diese Methode wird zu Beginn des Programms aufgerufen.
         // Es erstellt aus den Einträgen des JSON Files eine Arraylist aus den Objekten (Kategorie z.B. m/w, der Fragenstring und die Antwort z.B. "weiblich")
 
-
         fillList();
-        // Da die Liste der Antworten sofort für die Fragenfindung verwendet wird, muss einmal die Liste befüllt werden.
 
         String category;
         String question;
@@ -115,7 +113,6 @@ public class Question {
 
         finalQuestionList = (ArrayList<Question>) questionList;
         currentQuestionObject = finalQuestionList.get(0);
-
     }
 
     public static ArrayList<Question> getCurrentQuestion(String category) {
@@ -139,7 +136,6 @@ public class Question {
 
        return finalQuestionList.size();
     }
-
 
     public static void removeCurrentQuestion() {
 
