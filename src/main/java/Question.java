@@ -161,6 +161,21 @@ public class Question {
         finalQuestionList = anotherTempList;
     }
 
+    public static int stringToIndex(String answer) {
+
+        int index = 0;
+        int limit = getQuestionsLeft();
+
+        for (int i = 0; i < limit; i++) {
+            Question questionPrint = finalQuestionList.get(i);
+            if (questionPrint.answer.equals(answer)) {
+                index = i;
+            }
+        }
+
+        return index;
+    }
+
     public static String getNewQuestion(int position) {
 
         // Arbeitet die in createQuestions() erstellte Fragenliste ab.

@@ -39,13 +39,16 @@ public class Main {
         Question.createQuestions();
         // Fragen werden aus dem File gelesen und als Objekte in der Arraylist gespeichert.
 
+
+
+
         System.out.println("************** UNSER MAINLOOP *******************");
 
         //unser MainLoop
         while (isGameOn) {
             System.out.println("Die Frage lautet:");
 
-            Question.getNewQuestion(0);
+            Question.getNewQuestion(Question.stringToIndex(Politician.mergeProbability()));
             input = scanner.nextInt();
 
             if (input == 1) {

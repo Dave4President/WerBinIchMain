@@ -26,6 +26,16 @@ public class Politician {
     public static String lastPolitician;
     public static ArrayList<String> categoryList;
 
+    private static int probAlter;
+    private static int probGeschlecht;
+    private static int probAktiv;
+    private static int probHaare;
+    private static int probPartei;
+    private static int probAmt;
+    private static int probBrille;
+
+    private ArrayList<String> probList;
+
     public static void fillList() {
 
         // Eine Methode, die den Politikern zugehörigen Kategorien in eine List speichert.
@@ -173,10 +183,45 @@ public class Politician {
         return tempString;
     }
 
-    public static Question getBestQuestionObject() {
+    public static String mergeProbability() {
 
-        int x = finalPoliticianList.size();
-        int limit = x;
+        ArrayList<Integer> someList = new ArrayList<Integer>();
+        ArrayList<String> anotherList = new ArrayList<String>();
+
+        someList.add(probAlter);
+        anotherList.add(getProbabilityAlter());
+        someList.add(probGeschlecht);
+        anotherList.add(getProbabilityGeschlecht());
+        someList.add(probAktiv);
+        anotherList.add(getProbabilityAktiv());
+        someList.add(probHaare);
+        anotherList.add(getProbabilityHaare());
+        someList.add(probAmt);
+        anotherList.add(getProbabilityAmt());
+        someList.add(probBrille);
+        anotherList.add(getProbabilityBrille());
+
+        int tempInt = 0;
+        String tempString = "";
+
+        for (int i = 0; i < 6; i++) {
+            if (someList.get(i) > tempInt && someList.get(i) != 0) {
+                tempInt = someList.get(i);
+                tempString = anotherList.get(i);
+
+
+            }
+        }
+
+        return tempString;
+    }
+
+    public static String getProbabilityAlter() {
+
+        // Teil eines Versuchs einer "intelligenten" Fragenfindung
+        // Wird noch nicht verwendet
+
+        int limit = finalPoliticianList.size();;
         ArrayList<Politician> tempList = finalPoliticianList;
         ArrayList<Question> questionList = Question.getQuestionsArr();
         int someInt = 0;
@@ -191,14 +236,6 @@ public class Politician {
         int altCount = 0;
         int uraltCount = 0;
 
-        for (int i = 0; i < Question.getQuestionsLeft(); i++) {
-
-            tempQuestion = questionList.get(i);
-
-            if (questionList.get(i).equals(tempQuestion)) {
-
-            }
-        }
         for (int i = 0; i < limit; i++) {
             Politician tempPol = finalPoliticianList.get(i);
 
@@ -219,7 +256,472 @@ public class Politician {
                     someInt++;
             }
         }
-        return tempQuestion;
+
+        int durchschnitt = (totCount + jungCount + mittelCount + altCount + uraltCount) / 5;
+        ArrayList<Integer> someList = new ArrayList<Integer>();
+        ArrayList<String> anotherList = new ArrayList<String>();
+
+        someList.add(totCount);
+        anotherList.add("tot");
+        someList.add(jungCount);
+        anotherList.add("jung");
+        someList.add(mittelCount);
+        anotherList.add("mittel");
+        someList.add(altCount);
+        anotherList.add("alt");
+        someList.add(uraltCount);
+        anotherList.add("uralt");
+
+        int tempInt = 0;
+        String tempString = "";
+
+        for (int i = 0; i < 5; i++) {
+            if (durchschnitt - someList.get(i) > tempInt && someList.get(i) != 0) {
+                tempInt = someList.get(i);
+                tempString = anotherList.get(i);
+                probAlter = durchschnitt - someList.get(i);
+
+            }
+        }
+        return tempString;
+    }
+
+    public static String getProbabilityBrille() {
+
+        // Teil eines Versuchs einer "intelligenten" Fragenfindung
+        // Wird noch nicht verwendet
+
+        int limit = finalPoliticianList.size();;
+        ArrayList<Politician> tempList = finalPoliticianList;
+        ArrayList<Question> questionList = Question.getQuestionsArr();
+        int someInt = 0;
+        Question tempQuestion = new Question();
+
+        String brille = "brille";
+
+
+        int brilleCount = 0;
+        int neinCount = 0;
+
+        for (int i = 0; i < limit; i++) {
+            Politician tempPol = finalPoliticianList.get(i);
+
+            brille = tempPol.brille;
+
+            switch (brille) {
+                case "brille":
+                    brilleCount++;
+                case "nein":
+                    neinCount++;
+                default:
+                    someInt++;
+            }
+        }
+
+        int durchschnitt = (brilleCount + neinCount) / 2;
+        ArrayList<Integer> someList = new ArrayList<Integer>();
+        ArrayList<String> anotherList = new ArrayList<String>();
+
+        someList.add(brilleCount);
+        anotherList.add("brille");
+        someList.add(neinCount);
+        anotherList.add("nein");
+
+        int tempInt = 0;
+        String tempString = "";
+
+        for (int i = 0; i < 2; i++) {
+            if (durchschnitt - someList.get(i) > tempInt && someList.get(i) != 0) {
+                tempInt = someList.get(i);
+                tempString = anotherList.get(i);
+                probBrille = durchschnitt - someList.get(i);
+            }
+        }
+        return tempString;
+    }
+
+    public static String getProbabilityAmt() {
+
+        // Teil eines Versuchs einer "intelligenten" Fragenfindung
+        // Wird noch nicht verwendet
+
+        int limit = finalPoliticianList.size();;
+        ArrayList<Politician> tempList = finalPoliticianList;
+        ArrayList<Question> questionList = Question.getQuestionsArr();
+        int someInt = 0;
+        Question tempQuestion = new Question();
+
+        String amt = "amt";
+
+        int kanzlerCount = 0;
+        int praesidentCount = 0;
+        int landeshauptCount = 0;
+        int ministerCount = 0;
+        int buergermeisterCount = 0;
+        int diktatorCount = 0;
+        int parteiobmannCount = 0;
+        int vizekanzlerCount = 0;
+        int nationalratCount = 0;
+        int vizebuergCount = 0;
+        int monarchCount = 0;
+        int stadtratCount = 0;
+        int gouvCount = 0;
+
+        for (int i = 0; i < limit; i++) {
+            Politician tempPol = finalPoliticianList.get(i);
+
+            amt = tempPol.amt;
+
+            switch (amt) {
+                case "kanzler":
+                    kanzlerCount++;
+                case "praesident":
+                    praesidentCount++;
+                case "landeshaupt":
+                    landeshauptCount++;
+                case "minister":
+                    ministerCount++;
+                case "buergermeister":
+                    buergermeisterCount++;
+                case "diktator":
+                    diktatorCount++;
+                case "parteiobmann":
+                    parteiobmannCount++;
+                case "vizekanzler":
+                    vizekanzlerCount++;
+                case "nationalratsabgeordneter":
+                    nationalratCount++;
+                case "vizebuergermeister":
+                    vizebuergCount++;
+                case "monarch":
+                    monarchCount++;
+                case "stadtrat":
+                    stadtratCount++;
+                case "gouverneur":
+                    gouvCount++;
+                default:
+                    someInt++;
+            }
+        }
+
+        int durchschnitt = (kanzlerCount + praesidentCount + landeshauptCount + ministerCount + buergermeisterCount + diktatorCount + parteiobmannCount + vizekanzlerCount + nationalratCount + vizebuergCount + monarchCount + stadtratCount + gouvCount) / 13;
+        ArrayList<Integer> someList = new ArrayList<Integer>();
+        ArrayList<String> anotherList = new ArrayList<String>();
+
+        someList.add(kanzlerCount);
+        anotherList.add("kanzler");
+        someList.add(praesidentCount);
+        anotherList.add("praesident");
+        someList.add(landeshauptCount);
+        anotherList.add("landeshaupt");
+        someList.add(ministerCount);
+        anotherList.add("minister");
+        someList.add(buergermeisterCount);
+        anotherList.add("buergermeister");
+        someList.add(diktatorCount);
+        anotherList.add("diktator");
+        someList.add(parteiobmannCount);
+        anotherList.add("parteiobmann");
+        someList.add(vizekanzlerCount);
+        anotherList.add("vizekanzler");
+        someList.add(nationalratCount);
+        anotherList.add("nationalratsabgeordneter");
+        someList.add(vizebuergCount);
+        anotherList.add("vizebuergermeister");
+        someList.add(monarchCount);
+        anotherList.add("monarch");
+        someList.add(stadtratCount);
+        anotherList.add("stadtrat");
+        someList.add(gouvCount);
+        anotherList.add("gouverneur");
+
+        int tempInt = 0;
+        String tempString = "";
+
+        for (int i = 0; i < 13; i++) {
+            if (durchschnitt - someList.get(i) > tempInt && someList.get(i) != 0) {
+                tempInt = someList.get(i);
+                tempString = anotherList.get(i);
+                probAmt = durchschnitt - someList.get(i);
+            }
+        }
+        return tempString;
+    }
+
+    public static String getProbabilityPartei() {
+
+        // Teil eines Versuchs einer "intelligenten" Fragenfindung
+        // Wird noch nicht verwendet
+
+        int limit = finalPoliticianList.size();;
+        ArrayList<Politician> tempList = finalPoliticianList;
+        ArrayList<Question> questionList = Question.getQuestionsArr();
+        int someInt = 0;
+        Question tempQuestion = new Question();
+
+        String partei = "partei";
+        // BZOE, FPOE, SPOE, OEVP, GRUENEN, NEOS, NSDAP, LUGNER, STRONACH, BIERPARTEI, parteilos
+
+        int bzoeCount = 0;
+        int fpoeCount = 0;
+        int spoeCount = 0;
+        int oevpCount = 0;
+        int gruenenCount = 0;
+        int neosCount = 0;
+        int nsdapCount = 0;
+        int lugnerCount = 0;
+        int stronachCount = 0;
+        int bierCount = 0;
+        int parteilosCount = 0;
+
+        for (int i = 0; i < limit; i++) {
+            Politician tempPol = finalPoliticianList.get(i);
+
+            partei = tempPol.partei;
+
+            switch (partei) {
+                case "BZOE":
+                    bzoeCount++;
+                case "FPOE":
+                    fpoeCount++;
+                case "SPOE":
+                    spoeCount++;
+                case "OEVP":
+                    oevpCount++;
+                case "GRUENEN":
+                    gruenenCount++;
+                case "NEOS":
+                    neosCount++;
+                case "NSDAP":
+                    nsdapCount++;
+                case "LUGNER":
+                    lugnerCount++;
+                case "STRONACH":
+                    stronachCount++;
+                case "BIERPARTEI":
+                    bierCount++;
+                case "parteilos":
+                    parteilosCount++;
+                default:
+                    someInt++;
+            }
+        }
+
+        int durchschnitt = (bzoeCount + fpoeCount + spoeCount + oevpCount + gruenenCount + neosCount + nsdapCount + lugnerCount + stronachCount + bierCount + parteilosCount) / 11;
+        ArrayList<Integer> someList = new ArrayList<Integer>();
+        ArrayList<String> anotherList = new ArrayList<String>();
+
+        someList.add(bzoeCount);
+        anotherList.add("BZOE");
+        someList.add(fpoeCount);
+        anotherList.add("FPOE");
+        someList.add(spoeCount);
+        anotherList.add("SPOE");
+        someList.add(oevpCount);
+        anotherList.add("OEVP");
+        someList.add(gruenenCount);
+        anotherList.add("GRUENEN");
+        someList.add(neosCount);
+        anotherList.add("NEOS");
+        someList.add(nsdapCount);
+        anotherList.add("NSDAP");
+        someList.add(lugnerCount);
+        anotherList.add("LUGNER");
+        someList.add(stronachCount);
+        anotherList.add("STRONACH");
+        someList.add(bierCount);
+        anotherList.add("BIERPARTEI");
+        someList.add(parteilosCount);
+        anotherList.add("parteilos");
+
+        int tempInt = 0;
+        String tempString = "";
+
+        for (int i = 0; i < 11; i++) {
+            if (durchschnitt - someList.get(i) > tempInt && someList.get(i) != 0) {
+                tempInt = someList.get(i);
+                tempString = anotherList.get(i);
+                probPartei = durchschnitt - someList.get(i);
+            }
+        }
+        return tempString;
+    }
+
+    public static String getProbabilityHaare() {
+
+        // Teil eines Versuchs einer "intelligenten" Fragenfindung
+        // Wird noch nicht verwendet
+
+        int limit = finalPoliticianList.size();;
+        ArrayList<Politician> tempList = finalPoliticianList;
+        ArrayList<Question> questionList = Question.getQuestionsArr();
+        int someInt = 0;
+        Question tempQuestion = new Question();
+
+        String haare = "haare";
+        // Glatze, grau, braun, schwarz, blond
+
+        int glatzeCount = 0;
+        int grauCount = 0;
+        int braunCount = 0;
+        int schwarzCount = 0;
+        int blondCount = 0;
+
+        for (int i = 0; i < limit; i++) {
+            Politician tempPol = finalPoliticianList.get(i);
+
+            haare = tempPol.haare;
+
+            switch (haare) {
+                case "Glatze":
+                    glatzeCount++;
+                case "grau":
+                    grauCount++;
+                case "braun":
+                    braunCount++;
+                case "schwarz":
+                    schwarzCount++;
+                case "blond":
+                    blondCount++;
+                default:
+                    someInt++;
+            }
+        }
+
+        int durchschnitt = (glatzeCount + grauCount + braunCount + schwarzCount + blondCount) / 5;
+        ArrayList<Integer> someList = new ArrayList<Integer>();
+        ArrayList<String> anotherList = new ArrayList<String>();
+
+        someList.add(glatzeCount);
+        anotherList.add("Glatze");
+        someList.add(grauCount);
+        anotherList.add("grau");
+        someList.add(braunCount);
+        anotherList.add("braun");
+        someList.add(schwarzCount);
+        anotherList.add("schwarz");
+        someList.add(blondCount);
+        anotherList.add("blond");
+
+        int tempInt = 0;
+        String tempString = "";
+
+        for (int i = 0; i < 5; i++) {
+            if (durchschnitt - someList.get(i) > tempInt && someList.get(i) != 0) {
+                tempInt = someList.get(i);
+                tempString = anotherList.get(i);
+                probHaare = durchschnitt - someList.get(i);
+            }
+        }
+        return tempString;
+    }
+
+    public static String getProbabilityGeschlecht() {
+
+        // Teil eines Versuchs einer "intelligenten" Fragenfindung
+        // Wird noch nicht verwendet
+
+        int limit = finalPoliticianList.size();;
+        ArrayList<Politician> tempList = finalPoliticianList;
+        ArrayList<Question> questionList = Question.getQuestionsArr();
+        int someInt = 0;
+        Question tempQuestion = new Question();
+
+        String geschlecht = "geschlecht";
+        // weiblich, maennlich
+
+        int wCount = 0;
+        int mCount = 0;
+
+        for (int i = 0; i < limit; i++) {
+            Politician tempPol = finalPoliticianList.get(i);
+
+            geschlecht = tempPol.geschlecht;
+
+            switch (geschlecht) {
+                case "weiblich":
+                    wCount++;
+                case "maennlich":
+                    mCount++;
+                default:
+                    someInt++;
+            }
+        }
+
+        int durchschnitt = (wCount + mCount) / 2;
+        ArrayList<Integer> someList = new ArrayList<Integer>();
+        ArrayList<String> anotherList = new ArrayList<String>();
+
+        someList.add(wCount);
+        anotherList.add("weiblich");
+        someList.add(mCount);
+        anotherList.add("weiblich");
+
+        int tempInt = 0;
+        String tempString = "";
+
+        for (int i = 0; i < 2; i++) {
+            if (durchschnitt - someList.get(i) > tempInt && someList.get(i) != 0) {
+                tempInt = someList.get(i);
+                tempString = anotherList.get(i);
+                probGeschlecht = durchschnitt - someList.get(i);
+            }
+        }
+        return tempString;
+    }
+
+    public static String getProbabilityAktiv() {
+
+        // Teil eines Versuchs einer "intelligenten" Fragenfindung
+        // Wird noch nicht verwendet
+
+        int limit = finalPoliticianList.size();;
+        ArrayList<Politician> tempList = finalPoliticianList;
+        ArrayList<Question> questionList = Question.getQuestionsArr();
+        int someInt = 0;
+        Question tempQuestion = new Question();
+
+        String aktiv = "aktiv";
+        // aktiv, nein
+
+        int aktivCount = 0;
+        int neinCount = 0;
+
+        for (int i = 0; i < limit; i++) {
+            Politician tempPol = finalPoliticianList.get(i);
+
+            aktiv = tempPol.aktiv;
+
+            switch (aktiv) {
+                case "aktiv":
+                    aktivCount++;
+                case "nein":
+                    neinCount++;
+                default:
+                    someInt++;
+            }
+        }
+
+        int durchschnitt = (neinCount + aktivCount) / 2;
+        ArrayList<Integer> someList = new ArrayList<Integer>();
+        ArrayList<String> anotherList = new ArrayList<String>();
+
+        someList.add(aktivCount);
+        anotherList.add("aktiv");
+        someList.add(neinCount);
+        anotherList.add("nein");
+
+        int tempInt = 0;
+        String tempString = "";
+
+        for (int i = 0; i < 2; i++) {
+            if (durchschnitt - someList.get(i) > tempInt && someList.get(i) != 0) {
+                tempInt = someList.get(i);
+                tempString = anotherList.get(i);
+                probAktiv = durchschnitt - someList.get(i);
+            }
+        }
+        return tempString;
     }
 
     public static int getNewProbability() {

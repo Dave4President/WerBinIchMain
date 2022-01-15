@@ -469,15 +469,15 @@
 
 {"Kategorie":"amt","Frage":"Reichen die Qualifikationen deiner Person lediglich zum Regieren eines Bundeslandes?", "Antwort":"landeshaupt"},
 
-{"Kategorie":"amt","Frage":"Ist deine Person außen schön… oder Innenminister? Oder hat deine Person ein ähnliches Amt?", "Antwort":"minister"},
+{"Kategorie":"amt","Frage":"Ist deine Person außen schön… oder Innenminister? Oder hat deine Person ein ähnliches Minister-Amt?", "Antwort":"minister"},
 
-{"Kategorie":"amt","Frage":"Schafft deine Person es, mit all ihrer Energie eine Stadt zu regieren?", "Antwort":"buergermeister"},
+{"Kategorie":"amt","Frage":"Schafft deine Person es, mit all ihrer Energie eine Stadt zu regieren? (Bürgermeister)", "Antwort":"buergermeister"},
 
-{"Kategorie":"amt","Frage":"Hatte deine Person die absolute Macht?", "Antwort":"diktator"},
+{"Kategorie":"amt","Frage":"Hatte deine Person die absolute Macht über das DEUTSCHE REich!?", "Antwort":"diktator"},
 
-{"Kategorie":"amt","Frage":"Ist eine Aufgabe deiner Person ein eigenes Team zu führen?", "Antwort":"parteiobmann"},
+{"Kategorie":"amt","Frage":"Ist die Hauptaufgabe deiner Person die eigene Partei zu führen?", "Antwort":"parteiobmann"},
 
-{"Kategorie":"amt","Frage":"War das höchste Amt deiner Person der Rattenschwanz des Regierungschefs zu sein?", "Antwort":"vizekanzler"},
+{"Kategorie":"amt","Frage":"War das höchste Amt deiner Person der Rattenschwanz(Vizekanzler) des Regierungschefs zu sein? ", "Antwort":"vizekanzler"},
 
 {"Kategorie":"amt","Frage":"Hat deine Person einen Sitz im Nationalrat ergattert?", "Antwort":"nationalratsabgeordneter"},
 
@@ -492,8 +492,5 @@
 
 
 
-{"Kategorie":"brille","Frage":"Könnte man deine Person durch ihr Nasendrahtgestell auch als Vierauge bezeichnen? Anders gesagt.. trägt er/sie eine Brille?", "Antwort":"brille"},
-
-
-{"Kategorie":"name","Frage":"Wir haben deine Person erraten! Woop Woop! Sie heißt", "Antwort":""}]
+{"Kategorie":"brille","Frage":"Könnte man deine Person durch ihr Nasendrahtgestell auch als Vierauge bezeichnen? Anders gesagt.. trägt er/sie eine Brille?", "Antwort":"brille"}]
 }
