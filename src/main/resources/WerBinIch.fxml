@@ -33,7 +33,7 @@
              <Region HBox.hgrow="ALWAYS" />
             <Button fx:id="btnStartGame" mnemonicParsing="false" onAction="#btnStartGameClicked" text="Starte Spiel" />
             <Region HBox.hgrow="ALWAYS" />
-            <Button fx:id="btnNein" disable="true" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnNeinClicked" text="Nein" />
+            <Button fx:id="btnNein" disable="true" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Nein" />
          </children>
          <BorderPane.margin>
             <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />

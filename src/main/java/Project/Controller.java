@@ -3,10 +3,14 @@ package Project;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-public class Controller{
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class Controller implements Initializable {
 
     @FXML
     public Label output;
@@ -21,13 +25,13 @@ public class Controller{
     public void btnStartGameClicked() {
 
         output.setText("arschloch");
-        startGame();
+        //startGame();
 
     }
 
     public void startGame(){
 
-        btnStartGame.setDisable(true);
+        //btnStartGame.setDisable(true);
         btnJa.setDisable(false);
         btnNein.setDisable(false);
 
@@ -55,7 +59,7 @@ public class Controller{
 
                 isGameOn = endOfGame();
 
-                output.setText("nein");
+                //output.setText("nein");
 
                 play();
 
@@ -64,7 +68,7 @@ public class Controller{
 
             btnNein.setOnAction(event -> {
                 answer = false;
-                output.setText("nein");
+                //output.setText("nein");
 
                 Politician.setPoliticianList(Question.giveCategory(), answer, Question.giveAnswer());
 
@@ -75,11 +79,12 @@ public class Controller{
             });
 
         }
-        else {
+        else if(isGameOn==false) {
             btnStartGame.setDisable(false);
             btnJa.setDisable(true);
             btnNein.setDisable(true);
             output.setText("Deine Wahl ist auf " + lastPolitician + " gefallen.");
+            //waitForInput();
 
 
             btnStartGame.setOnAction(event -> {
@@ -88,23 +93,11 @@ public class Controller{
             });
         }
     }
-    public void btnJaClicked() {
-        //System.out.println("btnJaClicked");
-        //output.setText("btnJaClicked");
-        //input=1;
 
-    }
-
-    public void btnNeinClicked() {
-        //System.out.println("btnNeinClicked");
-        //output.setText("btnNeinClicked");
-        //input=0;
-    }
+    public void waitForInput(){
 
 
-    public void playGame(){
-
-    }
+    };
 
     public static String lastPolitician;
 
@@ -129,6 +122,10 @@ public class Controller{
         }
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        startGame();
+    }
 }
 
 
