@@ -208,6 +208,8 @@ public class Politician {
         anotherList.add(getProbabilityAmt());
         someList.add(probBrille);
         anotherList.add(getProbabilityBrille());
+        someList.add(probPartei);
+        anotherList.add(getProbabilityPartei());
 
         int tempInt = 0;
         String tempString = "";
