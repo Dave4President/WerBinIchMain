@@ -24,14 +24,14 @@ public class Controller implements Initializable {
 
     public void btnStartGameClicked() {
 
-        output.setText("arschloch");
-        //startGame();
+        //output.setText("arschloch");
+        startGame();
 
     }
 
     public void startGame(){
 
-        //btnStartGame.setDisable(true);
+        btnStartGame.setDisable(true);
         btnJa.setDisable(false);
         btnNein.setDisable(false);
 
@@ -124,7 +124,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        startGame();
+        //startGame();
     }
 }
 
