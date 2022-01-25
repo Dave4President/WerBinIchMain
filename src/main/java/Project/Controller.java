@@ -7,6 +7,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+import java.awt.*;
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -29,8 +31,33 @@ public class Controller implements Initializable {
 
     }
 
+    public void btnCloseClicked() {
+
+    }
+    public void btnReadMeClicked(){
+        try
+        {
+//constructor of file class having file as argument
+            File file = new File("readme.txt");
+            if (!Desktop.isDesktopSupported())//check if Desktop is supported by Platform or not
+            {
+
+                System.out.println("not supported");
+                return;
+            }
+            Desktop desktop = Desktop.getDesktop();
+            if(file.exists())         //checks file exists or not
+                desktop.open(file);              //opens the specified file
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     public void startGame(){
 
+        isGameOn=true;
         btnStartGame.setDisable(true);
         btnJa.setDisable(false);
         btnNein.setDisable(false);
