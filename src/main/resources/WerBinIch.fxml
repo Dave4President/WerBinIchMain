@@ -47,7 +47,7 @@
       </HBox>
    </bottom>
    <center>
-      <Label id="output" fx:id="output" text="Denken Sie sich eine in Österreich politisch tätige Person aus und starten Sie anschließend das Spiel." BorderPane.alignment="CENTER">
+      <Label id="output" fx:id="output" text="Denken Sie sich eine*n Politiker*in aus Österreich (eventuell fehlen einige) und starten Sie anschließend das Spiel." BorderPane.alignment="CENTER">
          <font>
             <Font size="14.0" />
          </font></Label>
