@@ -1,7 +1,5 @@
 package Project;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -26,7 +24,6 @@ public class Controller implements Initializable {
 
     public void btnStartGameClicked() {
 
-        //output.setText("arschloch");
         startGame();
 
     }
@@ -34,10 +31,10 @@ public class Controller implements Initializable {
     public void btnCloseClicked() {
 
     }
-    public void btnReadMeClicked(){
-        try
-        {
-//constructor of file class having file as argument
+
+    public void btnReadMeClicked() {
+        try {
+            //constructor of file class having file as argument
             File file = new File("readme.txt");
             if (!Desktop.isDesktopSupported())//check if Desktop is supported by Platform or not
             {
@@ -46,18 +43,16 @@ public class Controller implements Initializable {
                 return;
             }
             Desktop desktop = Desktop.getDesktop();
-            if(file.exists())         //checks file exists or not
+            if (file.exists())         //checks file exists or not
                 desktop.open(file);              //opens the specified file
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void startGame(){
+    public void startGame() {
 
-        isGameOn=true;
+        isGameOn = true;
         btnStartGame.setDisable(true);
         btnJa.setDisable(false);
         btnNein.setDisable(false);
@@ -73,7 +68,7 @@ public class Controller implements Initializable {
 
     }
 
-    public void play(){
+    public void play() {
         if (isGameOn) {
 
             output.setText(Question.getNewQuestion(Question.stringToIndex(Politician.mergeProbability())));
@@ -86,8 +81,6 @@ public class Controller implements Initializable {
 
                 isGameOn = endOfGame();
 
-                //output.setText("nein");
-
                 play();
 
             });
@@ -95,7 +88,6 @@ public class Controller implements Initializable {
 
             btnNein.setOnAction(event -> {
                 answer = false;
-                //output.setText("nein");
 
                 Politician.setPoliticianList(Question.giveCategory(), answer, Question.giveAnswer());
 
@@ -105,9 +97,9 @@ public class Controller implements Initializable {
 
             });
 
-        }
-        else if(isGameOn==false) {
+        } else if (isGameOn == false) {
             btnStartGame.setDisable(false);
+            btnStartGame.setText("Neues Spiel");
             btnJa.setDisable(true);
             btnNein.setDisable(true);
             output.setText("Deine Wahl ist auf " + lastPolitician + " gefallen.");
@@ -115,16 +107,17 @@ public class Controller implements Initializable {
 
 
             btnStartGame.setOnAction(event -> {
-                output.setText("arschloch");
                 startGame();
             });
         }
     }
 
-    public void waitForInput(){
+    public void waitForInput() {
 
 
-    };
+    }
+
+    ;
 
     public static String lastPolitician;
 
@@ -139,12 +132,10 @@ public class Controller implements Initializable {
         if (x == 1) {
             lastPolitician = Politician.getLastPolitician();
             return false;
-        }
-        else if (x == 0){
-            lastPolitician = "*Kein Treffer, sry*";
+        } else if (x == 0) {
+            lastPolitician = "niemanden";
             return false;
-        }
-        else {
+        } else {
             return true;
         }
     }
