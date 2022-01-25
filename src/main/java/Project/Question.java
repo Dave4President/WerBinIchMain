@@ -183,7 +183,7 @@ public class Question {
         Question questionPrint = finalQuestionList.get(position);
         currentQuestionObject = questionPrint;
         currentCategory = questionPrint.category;
-        System.out.println(questionPrint.question);
+        //System.out.println(questionPrint.question);
         finalQuestionList.remove(questionPrint);
 
         return questionPrint.question;

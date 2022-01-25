@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <HBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnJa" disable="true" mnemonicParsing="false" text="Ja" />
+             <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnStartGame" mnemonicParsing="false" onAction="#btnStartGameClicked" text="Starte Spiel" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnNein" disable="true" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnNeinClicked" text="Nein" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <center>
+      <Label id="output" fx:id="output" text="Bitte starten Sie das Spiel" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
