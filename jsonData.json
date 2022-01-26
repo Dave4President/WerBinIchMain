@@ -417,7 +417,7 @@
 
 {"Kategorie":"alter","Frage":"Kann man das Alter deiner Person als Mittelalter einstufen (40-50 Jahre)?","Antwort":"mittel"},
 
-{"Kategorie":"alter","Frage":"Gehört deiner Person, dem Alter entsprechend, eigentlich in die Pension verabschiedet (50-60 Jahre)?","Antwort":"alt"},
+{"Kategorie":"alter","Frage":"Geh\u00F6rt deiner Person, dem Alter entsprechend, eigentlich in die Pension verabschiedet (50-60 Jahre)?","Antwort":"alt"},
 
 {"Kategorie":"alter","Frage":"Ist deine Person vom Aussterben bedroht?(60-)","Antwort":"uralt"},
 
@@ -427,11 +427,11 @@
 
 
 
-{"Kategorie":"haare","Frage":"Trägt deine Person die selbe Frisur wie Mr. Proper?", "Antwort":"Glatze"},
+{"Kategorie":"haare","Frage":"Tr\u00E4gt deine Person die selbe Frisur wie Mr. Proper?", "Antwort":"Glatze"},
 
 {"Kategorie":"haare","Frage":"Passt die Haarfarbe deiner Person zu 50 Shades of Grey?", "Antwort":"grau"},
 
-{"Kategorie":"haare","Frage":"Ähnelt die Haarfarbe deiner Person heißer Schokolade?", "Antwort":"braun"},
+{"Kategorie":"haare","Frage":"\u00C4hnelt die Haarfarbe deiner Person heißer Schokolade?", "Antwort":"braun"},
 
 {"Kategorie":"haare","Frage":"Ist die Haarfarbe deiner Person schwarz wie Ebenholz?", "Antwort":"schwarz"},
 
@@ -445,45 +445,45 @@
 
 {"Kategorie":"partei","Frage":"Bei uns wird der Spritzwein noch hochgehalten! Ist deine Person auch Mitglied unserer roten Sozialpartei? ", "Antwort":"SPOE"},
 
-{"Kategorie":"partei","Frage":"Korruption; Sushi und Gelfrisuren.. gehört deine Person auch zu unserem Club? ", "Antwort":"OEVP"},
+{"Kategorie":"partei","Frage":"Korruption; Sushi und Gelfrisuren.. geh\u00F6rt deine Person auch zu unserem Club? ", "Antwort":"OEVP"},
 
-{"Kategorie":"partei","Frage":"Wir sind gut zu Vögeln! Ist deine Person auch Mitglied unserer tierliebenden grünen Partei?", "Antwort":"GRUENEN"},
+{"Kategorie":"partei","Frage":"Wir sind gut zu V\u00F6geln! Ist deine Person auch Mitglied unserer tierliebenden grünen Partei?", "Antwort":"GRUENEN"},
 
 {"Kategorie":"partei","Frage":"Rosa ist meine Lieblingsfarbe… auch die deiner Partei ??", "Antwort":"NEOS"},
 
 {"Kategorie":"partei","Frage":"Bist du Mitglied der braunen Parteisuppe aus dem 20.Jahrhundert?", "Antwort":"NSDAP"},
 
-{"Kategorie":"partei","Frage":"Mausis, Bambis, Kolibris, Katzis und Bienchen liebt unser Parteiobmann. Gehört deine Person auch unserem Lugner-Verein an?", "Antwort":"LUGNER"},
+{"Kategorie":"partei","Frage":"Mausis, Bambis, Kolibris, Katzis und Bienchen liebt unser Parteiobmann. Geh\u00F6rt deine Person auch unserem Lugner-Verein an?", "Antwort":"LUGNER"},
 
-{"Kategorie":"partei","Frage":"Unser Team gab es nur für kurze Zeit, doch dank Magna war unser Erfolg sehr breit! War deine Person auch Mitglied im Team Stronach?", "Antwort":"STRONACH"},
+{"Kategorie":"partei","Frage":"Unser Team gab es nur f\u00FCr kurze Zeit, doch dank Magna war unser Erfolg sehr breit! War deine Person auch Mitglied im Team Stronach?", "Antwort":"STRONACH"},
 
 {"Kategorie":"partei","Frage":"Fließt BIER durch deine Adern? Dann ist deine Person Mitglied der einzig wahren Partei!! ", "Antwort":"BIERPARTEI"},
 
-{"Kategorie":"partei","Frage":"Fühlt sich deine Person allein, und keiner Partei angehörig?", "Antwort":"parteilos"},
+{"Kategorie":"partei","Frage":"F\u00FChlt sich deine Person allein, und keiner Partei angeh\u00F6rig?", "Antwort":"parteilos"},
 
 
 
 {"Kategorie":"amt","Frage":"Durfte deine Person einst oder heute Kanzler*in sein?", "Antwort":"kanzler"},
 
-{"Kategorie":"amt","Frage":"Durfte deine Person als höchstes Amt auf dem Präsidententhron sitzen?", "Antwort":"praesident"},
+{"Kategorie":"amt","Frage":"Durfte deine Person als h\u00F6chstes Amt auf dem Pr\u00E4sidententhron sitzen?", "Antwort":"praesident"},
 
 {"Kategorie":"amt","Frage":"Reichen die Qualifikationen deiner Person lediglich zum Regieren eines Bundeslandes?", "Antwort":"landeshaupt"},
 
-{"Kategorie":"amt","Frage":"Ist deine Person außen schön… oder Innenminister? Oder hat deine Person ein ähnliches Minister-Amt?", "Antwort":"minister"},
+{"Kategorie":"amt","Frage":"Ist deine Person außen sch\u00F6n… oder Innenminister? Oder hat deine Person ein \u00E4hnliches Minister-Amt?", "Antwort":"minister"},
 
-{"Kategorie":"amt","Frage":"Schafft deine Person es, mit all ihrer Energie eine Stadt zu regieren? (Bürgermeister)", "Antwort":"buergermeister"},
+{"Kategorie":"amt","Frage":"Schafft deine Person es, mit all ihrer Energie eine Stadt zu regieren? (B\u00FCrgermeister)", "Antwort":"buergermeister"},
 
 {"Kategorie":"amt","Frage":"Hatte deine Person die absolute Macht?", "Antwort":"diktator"},
 
-{"Kategorie":"amt","Frage":"Ist die Hauptaufgabe deiner Person die eigene Partei zu führen?", "Antwort":"parteiobmann"},
+{"Kategorie":"amt","Frage":"Ist die Hauptaufgabe deiner Person die eigene Partei zu f\u00FChren?", "Antwort":"parteiobmann"},
 
-{"Kategorie":"amt","Frage":"War das höchste Amt deiner Person der Rattenschwanz(Vizekanzler) des Regierungschefs zu sein? ", "Antwort":"vizekanzler"},
+{"Kategorie":"amt","Frage":"War das h\u00F6chste Amt deiner Person der Rattenschwanz(Vizekanzler) des Regierungschefs zu sein? ", "Antwort":"vizekanzler"},
 
 {"Kategorie":"amt","Frage":"Hat deine Person einen Sitz im Nationalrat ergattert?", "Antwort":"nationalratsabgeordneter"},
 
 {"Kategorie":"amt","Frage":"Ist deine Person weiblich?", "Antwort":"vizebuergermeister"},
 
-{"Kategorie":"amt","Frage":"Regierte deine Person einst in wunderschönen Kleidern über Österreich/Ungarn?", "Antwort":"monarch"},
+{"Kategorie":"amt","Frage":"Regierte deine Person einst in wundersch\u00F6nen Kleidern über \u00D6sterreich/Ungarn?", "Antwort":"monarch"},
 
 {"Kategorie":"amt","Frage":"Vertritt deine Person die Interessen einer Stadt und hat einen Sitz im Stadtrat?", "Antwort":"stadtrat"},
 
@@ -492,5 +492,5 @@
 
 
 
-{"Kategorie":"brille","Frage":"Könnte man deine Person durch ihr Nasendrahtgestell auch als Vierauge bezeichnen? Anders gesagt.. trägt er/sie eine Brille?", "Antwort":"brille"}]
+{"Kategorie":"brille","Frage":"K\u00F6nnte man deine Person durch ihr Nasendrahtgestell auch als Vierauge bezeichnen? Anders gesagt.. tr\u00E4gt er/sie eine Brille?", "Antwort":"brille"}]
 }
