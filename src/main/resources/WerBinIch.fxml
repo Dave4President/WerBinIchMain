@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="20.0" minWidth="-Infinity" prefHeight="200.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="20.0" minWidth="-Infinity" prefHeight="200.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller">
    <top>
       <MenuBar id="btn" BorderPane.alignment="CENTER">
         <menus>
@@ -42,7 +42,7 @@
       </HBox>
    </bottom>
    <center>
-      <Label id="output" fx:id="output" text="Denken Sie sich an eine*n Politiker*in aus Österreich und starten Sie anschließend das Spiel." BorderPane.alignment="CENTER">
+      <Label id="output" fx:id="output" text="Denken Sie sich eine*n Politiker*in aus Österreich und starten Sie anschließend das Spiel." BorderPane.alignment="CENTER">
          <font>
             <Font size="14.0" />
          </font></Label>

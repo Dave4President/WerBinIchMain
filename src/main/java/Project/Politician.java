@@ -8,6 +8,7 @@ import org.json.simple.parser.ParseException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -744,7 +745,7 @@ public class Politician {
 
         try {
             JSONParser parser = new JSONParser();
-            Object obj = parser.parse(new FileReader("jsonData.json"));
+            Object obj = parser.parse(new FileReader("jsonData.json", StandardCharsets.UTF_8));
             JSONObject jsonObject = (JSONObject) obj;
             JSONArray politiciansArray = (JSONArray) jsonObject.get("politicians");
             for (Object objInArr : politiciansArray) {
