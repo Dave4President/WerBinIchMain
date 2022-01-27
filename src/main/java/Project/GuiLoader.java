@@ -21,10 +21,7 @@ public class GuiLoader extends Application {
         primaryStage.getIcons().add(new Image("file:loco.png"));
         primaryStage.setScene(new Scene(root, 800, 200));
         primaryStage.show();
-
     }
-
-
 
 }
 

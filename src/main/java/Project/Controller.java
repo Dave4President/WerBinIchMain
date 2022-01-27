@@ -7,7 +7,9 @@ import javafx.scene.control.Label;
 import java.awt.*;
 import java.io.File;
 
-public class Controller{
+public class Controller {
+
+    public static String lastPolitician;
 
     @FXML
     public Label output;
@@ -18,7 +20,7 @@ public class Controller{
     public boolean isGameOn = true;
     public boolean answer;
 
-    public void readFile(String filename){
+    public void readFile(String filename) {
         try {
             //constructor of file class having file as argument
             File file = new File(filename);
@@ -34,7 +36,6 @@ public class Controller{
             e.printStackTrace();
         }
     }
-
 
     public void btnReadMeClicked() {
 
@@ -101,9 +102,6 @@ public class Controller{
             btnStartGame.setOnAction(event -> startGame());
         }
     }
-
-
-    public static String lastPolitician;
 
     public boolean endOfGame() {
 
