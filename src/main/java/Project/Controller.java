@@ -13,7 +13,7 @@ public class Controller{
     public Label output;
 
     @FXML
-    public Button btnJa, btnNein, btnStartGame, btnClose;
+    public Button btnJa, btnNein, btnStartGame;
 
     public boolean isGameOn = true;
     public boolean answer;
