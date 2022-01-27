@@ -5,15 +5,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="20.0" minWidth="-Infinity" prefHeight="200.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="20.0" minWidth="-Infinity" prefHeight="200.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controller">
    <top>
       <MenuBar id="btn" BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem id="btnClose" mnemonicParsing="false" onAction="#btnCloseClicked" text="Close" />
-            </items>
-          </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem id="btnReadMe" mnemonicParsing="false" onAction="#btnReadMeClicked" text="ReadMe" />
@@ -31,7 +26,7 @@
                   <Font size="24.0" />
                </font></Button>
              <Region HBox.hgrow="ALWAYS" />
-            <Button fx:id="btnStartGame" minHeight="50.0" mnemonicParsing="false" onAction="#btnStartGameClicked" text="Starte Spiel">
+            <Button fx:id="btnStartGame" minHeight="50.0" mnemonicParsing="false" onAction="#startGame" text="Starte Spiel">
                <font>
                   <Font size="14.0" />
                </font></Button>
@@ -47,7 +42,7 @@
       </HBox>
    </bottom>
    <center>
-      <Label id="output" fx:id="output" text="Denken Sie sich eine*n Politiker*in aus Österreich und starten Sie anschließend das Spiel." BorderPane.alignment="CENTER">
+      <Label id="output" fx:id="output" text="Denken Sie sich an eine*n Politiker*in aus Österreich und starten Sie anschließend das Spiel." BorderPane.alignment="CENTER">
          <font>
             <Font size="14.0" />
          </font></Label>

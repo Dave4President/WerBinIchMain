@@ -1,36 +1,23 @@
 package Project;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.awt.*;
 import java.io.File;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class Controller{
 
     @FXML
     public Label output;
 
     @FXML
-    public Button btnJa, btnNein, btnStartGame;
+    public Button btnJa, btnNein, btnStartGame, btnClose;
 
     public boolean isGameOn = true;
     public boolean answer;
-    int probability;
 
-    public void btnStartGameClicked() {
-
-        startGame();
-
-    }
-
-    public void btnCloseClicked() {
-
-    }
 
     public void btnReadMeClicked() {
         try {
@@ -38,13 +25,12 @@ public class Controller implements Initializable {
             File file = new File("readme.txt");
             if (!Desktop.isDesktopSupported())//check if Desktop is supported by Platform or not
             {
-
                 System.out.println("not supported");
                 return;
             }
             Desktop desktop = Desktop.getDesktop();
             if (file.exists())         //checks file exists or not
-                desktop.open(file);              //opens the specified file
+                desktop.open(file);    //opens the specified file
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -54,7 +40,7 @@ public class Controller implements Initializable {
         try {
             //constructor of file class having file as argument
             File file = new File("jsonData.json");
-            if (!Desktop.isDesktopSupported())//check if Desktop is supported by Platform or not
+            if (!Desktop.isDesktopSupported()) //check if Desktop is supported by Platform or not
             {
 
                 System.out.println("not supported");
@@ -62,7 +48,7 @@ public class Controller implements Initializable {
             }
             Desktop desktop = Desktop.getDesktop();
             if (file.exists())         //checks file exists or not
-                desktop.open(file);              //opens the specified file
+                desktop.open(file);    //opens the specified file
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -79,8 +65,6 @@ public class Controller implements Initializable {
         // Politiker werden aus dem File gelesen und als Objekte in der Arraylist gespeichert.
         Question.createQuestions();
         // Fragen werden aus dem File gelesen und als Objekte in der Arraylist gespeichert.
-
-        //output.setText("vorFehler");
 
         play();
 
@@ -115,27 +99,17 @@ public class Controller implements Initializable {
 
             });
 
-        } else if (isGameOn == false) {
+        } else if (!isGameOn) {
             btnStartGame.setDisable(false);
             btnStartGame.setText("Neues Spiel");
             btnJa.setDisable(true);
             btnNein.setDisable(true);
             output.setText("Deine Wahl ist auf " + lastPolitician + " gefallen.");
-            //waitForInput();
 
-
-            btnStartGame.setOnAction(event -> {
-                startGame();
-            });
+            btnStartGame.setOnAction(event -> startGame());
         }
     }
 
-    public void waitForInput() {
-
-
-    }
-
-    ;
 
     public static String lastPolitician;
 
@@ -158,10 +132,6 @@ public class Controller implements Initializable {
         }
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        //startGame();
-    }
 }
 
 
