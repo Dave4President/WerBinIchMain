@@ -18,11 +18,10 @@ public class Controller{
     public boolean isGameOn = true;
     public boolean answer;
 
-
-    public void btnReadMeClicked() {
+    public void readFile(String filename){
         try {
             //constructor of file class having file as argument
-            File file = new File("readme.txt");
+            File file = new File(filename);
             if (!Desktop.isDesktopSupported())//check if Desktop is supported by Platform or not
             {
                 System.out.println("not supported");
@@ -36,22 +35,15 @@ public class Controller{
         }
     }
 
-    public void btnPolitikerClicked() {
-        try {
-            //constructor of file class having file as argument
-            File file = new File("jsonData.json");
-            if (!Desktop.isDesktopSupported()) //check if Desktop is supported by Platform or not
-            {
 
-                System.out.println("not supported");
-                return;
-            }
-            Desktop desktop = Desktop.getDesktop();
-            if (file.exists())         //checks file exists or not
-                desktop.open(file);    //opens the specified file
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void btnReadMeClicked() {
+
+        readFile("readme.txt");
+    }
+
+    public void btnPolitikerClicked() {
+
+        readFile("jsonData.json");
     }
 
     public void startGame() {
