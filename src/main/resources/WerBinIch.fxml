@@ -42,7 +42,7 @@
       </HBox>
    </bottom>
    <center>
-      <Label id="output" fx:id="output" text="Denken Sie sich eine*n Politiker*in aus Österreich und starten Sie anschließend das Spiel." BorderPane.alignment="CENTER">
+      <Label id="output" fx:id="output" text="Denken Sie an eine*n Politiker*in aus Österreich und starten Sie anschließend das Spiel." BorderPane.alignment="CENTER">
          <font>
             <Font size="14.0" />
          </font></Label>
